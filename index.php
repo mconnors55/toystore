@@ -34,6 +34,24 @@
 	 * TO-DO: Retrieve info for ALL remaining toys from the db
 	 */
 
+	 function get_remaining(PDO $pdo) {
+		// SQL query to retrieve all toys
+		$sql = "SELECT * 
+			FROM toy
+			WHERE toynum > '0001';";
+	
+		// Execute query and fetch all results
+		$toys = pdo($pdo, $sql)->fetchAll();
+	
+		return $toys;
+	}
+	
+	// Retrieve all toys from the database
+	$all_toys = get_remaining($pdo);
+	
+	// Output for debugging (optional)
+	print_r($all_toys);  
+
 
 // Closing PHP tag  ?> 
 
@@ -97,75 +115,75 @@
   				  -->
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[0]['toynum'] ?>">
+  						<img src="<?= $toys[0]['imgSrc'] ?>" alt="<?= $toys[0]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[0]['name'] ?></h2>
+  					<p>$<?= $toys[0]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[1]['toynum'] ?>">
+  						<img src="<?= $toys[1]['imgSrc'] ?>" alt="<?= $toys[1]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[1]['name'] ?></h2>
+  					<p>$<?= $toys[1]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[2]['toynum'] ?>">
+  						<img src="<?= $toys[2]['imgSrc'] ?>" alt="<?= $toys[2]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[2]['name'] ?></h2>
+  					<p>$<?= $toys[2]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[3]['toynum'] ?>">
+  						<img src="<?= $toys[3]['imgSrc'] ?>" alt="<?= $toys[3]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[3]['name'] ?></h2>
+  					<p>$<?= $toys[3]['price'] ?></p>
   				</div>
   				
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[4]['toynum'] ?>">
+  						<img src="<?= $toys[4]['imgSrc'] ?>" alt="<?= $toys[4]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[4]['name'] ?></h2>
+  					<p>$<?= $toys[4]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[5]['toynum'] ?>">
+  						<img src="<?= $toys[5]['imgSrc'] ?>" alt="<?= $toys[5]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[5]['name'] ?></h2>
+  					<p>$<?= $toys[5]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[6]['toynum'] ?>">
+  						<img src="<?= $toys[6]['imgSrc'] ?>" alt="<?= $toys[6]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[6]['name'] ?></h2>
+  					<p>$<?= $toys[6]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[7]['toynum'] ?>">
+  						<img src="<?= $toys[7]['imgSrc'] ?>" alt="<?= $toys[7]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[7]['name'] ?></h2>
+  					<p>$<?= $toys[7]['price'] ?></p>
   				</div>
 
   				<div class="toy-card">
-  					<a href="toy.php?toynum=<?= '' ?>">
-  						<img src="<?= '' ?>" alt="<?= '' ?>">
+  					<a href="toy.php?toynum=<?= $toys[8]['toynum'] ?>">
+  						<img src="<?= $toys[8]['imgSrc'] ?>" alt="<?= $toys[8]['name'] ?>">
   					</a>
-  					<h2><?= '' ?></h2>
-  					<p>$<?= '' ?></p>
+  					<h2><?= $toys[8]['name'] ?></h2>
+  					<p>$<?= $toys[8]['price'] ?></p>
   				</div>
 
   			</section>
